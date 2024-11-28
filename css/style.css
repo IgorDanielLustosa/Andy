@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+
 }
 
 :root {
@@ -30,13 +31,17 @@ body {
 
 header {
     position: absolute;
+    /* position: relative; */
     height: 86px;
     width: 100%;
     padding: 0 2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 999;
+    z-index: 99999999999999999999999;
+
+    /* background-color: #1a1a1a; */
+    /* for sometime only after that we will remove it */
 }
 
 header .logo {
@@ -45,8 +50,9 @@ header .logo {
     font-weight: 600;
     font-size: xx-large;
     font-family: var(--font-02);
-    text-shadow: 0.5px 0.5px 3px var(--global-color-1);
-    transition: 0.4s;
+
+    text-shadow: .5px .5px 3px var(--global-color-1);
+    transition: .4s;
 }
 
 header .logo:hover {
@@ -81,9 +87,9 @@ header ul li a:hover {
 
 header ul li #NavNum {
     border: 2px solid var(--global-color-0);
-    padding: 15px 25px;
+    padding: 20px 35px;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: large;
     font-weight: 700;
     color: #fff;
 }
@@ -93,7 +99,7 @@ header ul li #NavNum:hover {
 }
 
 /* Now it's time to make it responsive  */
-@media (max-width:768px) {
+@media (max-width:1024px) {
 
     header {
         padding: 10px;
@@ -203,12 +209,7 @@ header ul li #NavNum:hover {
     }
 }
 
-/* Responsivo para tablets e desktops */
-@media (min-width: 768px) {
-    header ul li #NavNum {
-        display: inline;
-    }
-}
+
 
 /* for sometime  */
 .sectionFirst {
@@ -220,7 +221,7 @@ header ul li #NavNum:hover {
     /*we will remove it later*/
 }
 
-.sectionFirst::after{
+.sectionFirst::after {
     content: '';
     position: absolute;
     top: 0;
@@ -232,7 +233,7 @@ header ul li #NavNum:hover {
     opacity: .7;
 }
 
-.sectionFirst::before{
+.sectionFirst::before {
     content: '';
     position: absolute;
     top: 0;
@@ -240,7 +241,7 @@ header ul li #NavNum:hover {
     width: 100%;
     height: 100%;
     /* background-color: var(--global-color-2); */
-    background-image: url(../img/banner01.jpg);
+    background-image: url("../img/backgroundimg.jpg");
     z-index: -1;
     opacity: .7;
     background-position: center;
@@ -252,11 +253,11 @@ header ul li #NavNum:hover {
 .sectionFirst .frontPage {
     padding: 0 2%;
     display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     flex-direction: column;
     gap: 2rem;
-    max-width: 80%;
-    align-items: center;
-    text-align: center;
+    max-width: 60%;
 }
 
 .sectionFirst .frontPage .address {
@@ -282,29 +283,33 @@ header ul li #NavNum:hover {
 
 .sectionFirst .frontPage .btn a {
     border-radius: 7px;
-    padding: 12px 20px;
-    font-size: 1rem;
+    padding: 17px 30px;
     text-decoration: none;
 }
 
-/* Estilos do Botão */
 .sectionFirst .frontPage .btn a:nth-child(1) {
     border: 1px solid var(--global-color-0);
     background-color: var(--global-color-0);
     color: var(--global-color-4);
-    transition: all 0.4s ease;
+    transition: all .4s ease;
+}
+
+.sectionFirst .frontPage .btn a:nth-child(1):hover {
+    border: 1px solid var(--global-color-1);
+    background-color: var(--global-color-1);
 }
 
 .sectionFirst .frontPage .btn a:nth-child(2) {
     border: 1px solid var(--global-color-0);
     background-color: var(--global-color-4);
     color: var(--global-color-0);
-    transition: all 0.4s ease;
+    transition: all .4s ease;
 }
 
-.sectionFirst .frontPage .btn a:hover {
+.sectionFirst .frontPage .btn a:nth-child(2):hover {
+    border: 1px solid var(--global-color-4);
     background-color: var(--global-color-1);
-    border: 1px solid var(--global-color-1);
+    color: var(--global-color-4);
 }
 
 
@@ -330,11 +335,11 @@ header ul li #NavNum:hover {
 /* section second  */
 
 .sectionSecond {
-    display: flex;
-    justify-content: space-between;
+    padding: 0 2%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     align-items: center;
-    padding: 5rem 2%;
-    gap: 1rem;
 }
 
 .sectionSecond .fourIMG {
@@ -454,7 +459,8 @@ header ul li #NavNum:hover {
 
 /* DiscountSection */
 
-.DiscountSection {    
+.DiscountSection {
+    /* background-color: #474747; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -518,8 +524,8 @@ header ul li #NavNum:hover {
 /* .DiscountSection .textinfo p {} */
 
 .DiscountSection a {
-    padding: 1rem 2rem;
-    border-radius: 5px;
+    padding: 17px 30px;
+    border-radius: 7px;
     text-decoration: none;
     border: 1px solid var(--global-color-4);
     background-color: transparent;
@@ -560,9 +566,8 @@ header ul li #NavNum:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background: url("../img/banner02.jpg");
+    background: url("../img/discountimg.jpg");
     z-index: -2;
-    
 }
 
 .transformBox::after {
@@ -801,56 +806,13 @@ header ul li #NavNum:hover {
 
 
 
-/* Ajuste do footer */
+/* footer */
 footer {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-content: center;
     padding: 2rem 2%;
     background-color: #1a1a1a;
     color: #fff;
-    flex-direction: column;
-    text-align: center;
-}
 
-@media (min-width: 768px) {
-    footer {
-        flex-direction: row;
-        text-align: left;
-    }
-}
-@media (min-width: 768px) {
-    .sectionSecond {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Responsivo para todas as seções com grid */
-@media (max-width: 1024px) {
-    .sectionThree .servicesBox {
-        grid-template-columns: repeat(2, minmax(100px, 280px));
-    }
-
-    .sectionFive {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-
-/* Ajuste responsivo para telas menores */
-@media (max-width: 768px) {
-    .DiscountSection {
-        flex-direction: column; /* Muda a direção do layout para coluna */
-        text-align: center;     /* Centraliza o conteúdo */
-    }
-
-    .DiscountSection .img {
-        order: -1; /* Opcional: coloca a imagem antes do texto */
-    }
-
-    .DiscountSection a {
-        margin-top: 1rem; /* Espaço entre o texto e o botão */
-        width: 100%;      /* Deixa o botão ocupar toda a largura, opcional */
-    }
 }

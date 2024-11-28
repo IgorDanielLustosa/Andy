@@ -1,9 +1,12 @@
+
+
 let menuToggle = document.querySelector('.menuToggle');
 let header = document.querySelector('header');
 let section = document.querySelector('section');
 // let section = document.getElementsByTagName('*');
 
-menuToggle.onclick = function(){
+
+menuToggle.onclick = function () {
     header.classList.toggle('active')
     section.classList.toggle('active')
 }
